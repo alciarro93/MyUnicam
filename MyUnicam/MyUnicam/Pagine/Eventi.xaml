@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyUnicam.Pagine.Eventi"
+             Title="{Binding Titolo}"
+             BackgroundColor="#EEEEEE"
+             Padding="10">
+
+  <ScrollView>
+    <StackLayout>
+      <ListView x:Name="ElencoEventi"
+                ItemsSource="{Binding Evento}"
+                SeparatorColor="#212F4A"
+                SelectedItem="{Binding EventoSelezionato, Mode=TwoWay}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Orientation="Vertical"
+                             BackgroundColor="#FFFFFF">
+                  <StackLayout BackgroundColor="#545D7F">
+                    <StackLayout Padding="10">
+                      <Label Text="{Binding Oggetto}"
+                             TextColor="#EEEEEE"
+                             VerticalOptions="Center"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout Orientation="Horizontal" >
+                    <StackLayout Padding="5" VerticalOptions="Center">
+                      <Image Source="DidatticaLink.png" Scale="0.7"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                      <Label Text="{Binding Luogo}"
+                             TextColor="#000000"
+                             VerticalOptions="Center"/>
+                      <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                        <Label Text="{Binding DataInizio}"
+                             TextColor="#ABABAB"
+                             VerticalOptions="Center"/>
+                        <Label Text="-"
+                             TextColor="#ABABAB"
+                             VerticalOptions="Center"/>
+                      <Label Text="{Binding DataFine}"
+                             TextColor="#ABABAB"
+                             VerticalOptions="Center"/>
+                      </StackLayout>
+                    </StackLayout>
+                    
+                  </StackLayout>
+                  <StackLayout HeightRequest="10"
+                               BackgroundColor="#EEEEEE"/>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

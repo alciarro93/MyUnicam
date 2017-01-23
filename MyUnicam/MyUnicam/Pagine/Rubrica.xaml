@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyUnicam.Pagine.Rubrica"
+             Title="{Binding Titolo}"
+             BackgroundColor="#EEEEEE"
+             Padding="10">
+  <ScrollView>
+    <StackLayout>
+      <ListView x:Name="ElencoRubrica"
+                ItemsSource="{Binding ListGroup}"
+                IsGroupingEnabled="true" 
+                ItemTapped="OnItemTapped"
+  		          GroupDisplayBinding="{Binding Iniziale}"
+  		          GroupShortNameBinding="{Binding Iniziale}"
+                BackgroundColor="#FFFFFF">
+        <ListView.GroupHeaderTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout BackgroundColor="#545D7F">
+                  <StackLayout Padding="10">
+                    <Label Text="{Binding Iniziale}"
+                           TextColor="#EEEEEE"
+                           VerticalOptions="Center"
+                           FontSize="18"/>
+                  </StackLayout>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.GroupHeaderTemplate>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Orientation="Vertical"
+                             BackgroundColor="#FFFFFF"
+                             Padding="10">
+                  <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Cognome}"
+                         TextColor="#212F4A"
+                         VerticalOptions="Center"/>
+                    <Label Text="{Binding Nome}"
+                         TextColor="#212F4A"
+                         VerticalOptions="Center"/>
+                  </StackLayout>
+                  <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                    <StackLayout Orientation="Horizontal">
+                      <Image Source="RubricaTelefono.png" Scale="0.5"/>
+                    <Label Text="{Binding Tel}"
+                         TextColor="#ABABAB"
+                         VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                      <Image Source="RubricaFax.png" Scale="0.5"/>
+                    <Label Text="{Binding Fax}"
+                         TextColor="#ABABAB"
+                         VerticalOptions="Center"/>
+                  </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                      <Image Source="RubricaEmail.png" Scale="0.5"/>
+                    <Label Text="{Binding Email}"
+                         TextColor="#ABABAB"
+                         VerticalOptions="Center"/>
+                </StackLayout>
+                  </StackLayout>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ScrollView>
+  
+</ContentPage>

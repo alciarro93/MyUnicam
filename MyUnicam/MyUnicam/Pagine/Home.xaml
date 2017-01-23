@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:MyUnicam;assembly=MyUnicam"
+             x:Class="MyUnicam.Pagine.Home"
+             Title="{Binding Titolo}"
+             BackgroundColor="#EEEEEE"
+             BackgroundImage="SfondoHome.jpg"
+             Padding="20">
+
+  <StackLayout BackgroundColor="#545D7F"
+               VerticalOptions="EndAndExpand">
+
+    <Label Text="{i18n:Translate PagineVisitate}" FontSize="20" HorizontalOptions="Center" TextColor="#EEEEEE" VerticalOptions="Center"/>
+
+    <ListView x:Name="PagineMoarUsate"
+              RowHeight="50"
+              ItemsSource="{Binding PagineQuick}"
+              SelectedItem="{Binding PaginaSelezionata, Mode=TwoWay}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Horizontal"
+                           BackgroundColor="#EEEEEE"
+                           Padding="10">
+                <Label Text="{Binding NomePagina}"
+                       TextColor="#212F4A"
+                       VerticalOptions="Center"/>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

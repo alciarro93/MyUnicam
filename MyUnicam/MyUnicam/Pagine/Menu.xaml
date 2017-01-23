@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:MyUnicam;assembly=MyUnicam"
+             x:Class="MyUnicam.Pagine.Menu"
+             Title="Menu"
+             BackgroundColor="#FFFFFF">
+
+  <!--   Colori utilizzati                               -->
+  <!--   Blu: #212F4A, colore voci menu e sfondo banner  -->
+  <!--   Bianco: #FFFFFF, testo banner                   -->
+  <ScrollView>
+  <StackLayout x:Name="StackMenu" BackgroundColor="#FFFFFF" HeightRequest="715">
+    
+      <!-- Elenco delle pagine del menu -->
+      <ListView x:Name="PagineMenu"
+                RowHeight="65"
+                ItemsSource="{Binding PagineMenu}"
+                SelectedItem="{Binding PaginaSelezionata, Mode=TwoWay}">
+        <ListView.Header>
+          <!-- Banner Università -->
+          <RelativeLayout x:Name="BannerUni" HeightRequest="65">
+            <StackLayout x:Name="StackUni" Orientation="Horizontal"
+                         BackgroundColor="#212F4A"
+                         HeightRequest="65"
+                         RelativeLayout.WidthConstraint=
+                     "{ConstraintExpression Type=RelativeToParent, Property=Width}">
+              <!-- Immagine banner Università -->
+              <Image Source="menu_title1.png"
+                     BackgroundColor="#212F4A"
+                     Aspect="AspectFill"
+                     HorizontalOptions="EndAndExpand"
+                     RelativeLayout.HeightConstraint=
+                 "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+            </StackLayout>
+
+            <!-- L'XConstraint da 20 è in pratica un padding da sinistra -->
+            <Grid RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                  RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                  RelativeLayout.XConstraint=
+              "{ConstraintExpression Type=Constant, Constant=20}">
+              <!-- Etichetta Università -->
+              <Label Text="{i18n:Translate BannerUniversita}"
+                     VerticalOptions="Center"
+                     FontSize="24"
+                     TextColor="#FFFFFF"/>
+            </Grid>
+          </RelativeLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Orientation="Horizontal">
+                  <!-- Icona della pagina -->
+                  <Image Source="{Binding IconaPagina}"
+                         WidthRequest="70"
+                         HeightRequest="30"
+                         Scale="0.7"/>
+                  <!-- Nome della pagina -->
+                  <Label Text="{Binding NomePagina}"
+                         TextColor="#212F4A"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+  
+
+    
+      <!-- Elenco delle pagine per gli studenti -->
+      <ListView x:Name="StudentiMenu"
+                RowHeight="65"
+                ItemsSource="{Binding Studenti}"
+                SelectedItem="{Binding PaginaSelezionata, Mode=TwoWay}">
+        <ListView.Header>
+          <!-- Banner Studenti -->
+          <RelativeLayout x:Name="BannerStu" HeightRequest="65">
+            <StackLayout x:Name="StackStu" Orientation="Horizontal"
+                         BackgroundColor="#212F4A"
+                         HeightRequest="65"
+                         RelativeLayout.WidthConstraint=
+                     "{ConstraintExpression Type=RelativeToParent, Property=Width}">
+              <!-- Immagine banner Studenti -->
+              <Image Source="menu_title2.png"
+                     BackgroundColor="#212F4A"
+                     Aspect="AspectFill"
+                     HorizontalOptions="EndAndExpand"
+                     RelativeLayout.HeightConstraint=
+                 "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+            </StackLayout>
+
+            <!-- L'XConstraint da 20 è in pratica un padding da sinistra -->
+            <Grid RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                  RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                  RelativeLayout.XConstraint=
+              "{ConstraintExpression Type=Constant, Constant=20}">
+              <!-- Etichetta Università -->
+              <Label Text="{i18n:Translate BannerStudenti}"
+                     VerticalOptions="Center"
+                     FontSize="24"
+                     TextColor="#FFFFFF"/>
+            </Grid>
+          </RelativeLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Orientation="Horizontal">
+                  <!-- Icona della pagina -->
+                  <Image Source="{Binding IconaPagina}"
+                         WidthRequest="70"
+                         HeightRequest="30"
+                         Scale="0.7"/>
+                  <!-- Nome della pagina -->
+                  <Label Text="{Binding NomePagina}"
+                         TextColor="#212F4A"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    
+  </StackLayout>
+  </ScrollView>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:MyUnicam;assembly=MyUnicam"
+             x:Class="MyUnicam.Pagine.CorsiLaurea"
+             Title="{Binding Titolo}"
+             BackgroundColor="#EEEEEE"
+             Padding="10">
+
+  <StackLayout VerticalOptions="StartAndExpand">
+    <ListView x:Name="ElencoTipiCorsi"
+              ItemsSource="{Binding CorsiLaurea.Corso}"
+              SelectedItem="{Binding CorsoSelezionato, Mode=TwoWay}"
+              VerticalOptions="StartAndExpand"
+              HasUnevenRows="True">
+      <ListView.Header>
+        <StackLayout BackgroundColor="#545D7F"
+               VerticalOptions="StartAndExpand">
+          <Label HeightRequest="30"
+                 FontSize="20"
+                 Text="{i18n:Translate CorsiLaurea}"
+                 HorizontalOptions="Center"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="Center"/>
+        </StackLayout>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Horizontal"
+                           BackgroundColor="#FFFFFF"
+                           Padding="10">
+                <StackLayout VerticalOptions="Center" Orientation="Vertical">
+                  <Image Source="DettaglioCorso.png"
+                           WidthRequest="50"
+                           HeightRequest="30"
+                           Scale="0.7"/>
+                </StackLayout>
+                <Label Text="{Binding NomeCorso}"
+                       TextColor="#212F4A"
+                       VerticalOptions="Center"/>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

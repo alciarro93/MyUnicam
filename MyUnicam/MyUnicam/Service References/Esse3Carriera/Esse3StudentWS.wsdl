@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://soapesse3.unicam.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://utils.soapesse3.unicam.it" xmlns:impl="http://soapesse3.unicam.it" targetNamespace="http://soapesse3.unicam.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://soapesse3.unicam.it">
+      <xsd:import namespace="http://utils.soapesse3.unicam.it" />
+      <xsd:element name="getAnagrafe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAnagrafeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getAnagrafeReturn" type="tns1:Studente" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCarriera">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="matricola" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCarrieraResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getCarrieraReturn" type="tns1:Esame" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCorsi">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCorsiResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getCorsiReturn" type="tns1:CorsoDiStudio" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="logout">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="logoutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="logoutReturn" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="login">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="loginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="loginReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://utils.soapesse3.unicam.it">
+      <xsd:complexType name="Studente">
+        <xsd:sequence>
+          <xsd:element name="codFis" nillable="true" type="xsd:string" />
+          <xsd:element name="nome" nillable="true" type="xsd:string" />
+          <xsd:element name="cognome" nillable="true" type="xsd:string" />
+          <xsd:element name="sesso" nillable="true" type="xsd:string" />
+          <xsd:element name="dataELuogoNascita" nillable="true" type="xsd:string" />
+          <xsd:element name="username" nillable="true" type="xsd:string" />
+          <xsd:element name="email" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Esame">
+        <xsd:sequence>
+          <xsd:element name="annoDiCorso" type="xsd:int" />
+          <xsd:element name="codice" nillable="true" type="xsd:string" />
+          <xsd:element name="nome" nillable="true" type="xsd:string" />
+          <xsd:element name="stato" nillable="true" type="xsd:string" />
+          <xsd:element name="aaFreq" type="xsd:int" />
+          <xsd:element name="cfu" type="xsd:float" />
+          <xsd:element name="dataEsame" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="voto" type="xsd:float" />
+          <xsd:element name="lode" type="xsd:boolean" />
+          <xsd:element name="noMedia" type="xsd:boolean" />
+          <xsd:element name="giudizioAlt" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CorsoDiStudio">
+        <xsd:sequence>
+          <xsd:element name="stuId" type="xsd:int" />
+          <xsd:element name="matricola" nillable="true" type="xsd:string" />
+          <xsd:element name="corsoDiStudio" nillable="true" type="xsd:string" />
+          <xsd:element name="percorsoDiStudio" nillable="true" type="xsd:string" />
+          <xsd:element name="stato" nillable="true" type="xsd:string" />
+          <xsd:element name="maxPunti" type="xsd:float" />
+          <xsd:element name="cfu" type="xsd:float" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="logoutResponse">
+    <wsdl:part name="parameters" element="impl:logoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="logoutRequest">
+    <wsdl:part name="parameters" element="impl:logout" />
+  </wsdl:message>
+  <wsdl:message name="getCorsiRequest">
+    <wsdl:part name="parameters" element="impl:getCorsi" />
+  </wsdl:message>
+  <wsdl:message name="getCarrieraRequest">
+    <wsdl:part name="parameters" element="impl:getCarriera" />
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part name="parameters" element="impl:login" />
+  </wsdl:message>
+  <wsdl:message name="getCorsiResponse">
+    <wsdl:part name="parameters" element="impl:getCorsiResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAnagrafeRequest">
+    <wsdl:part name="parameters" element="impl:getAnagrafe" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="parameters" element="impl:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCarrieraResponse">
+    <wsdl:part name="parameters" element="impl:getCarrieraResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAnagrafeResponse">
+    <wsdl:part name="parameters" element="impl:getAnagrafeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Esse3StudentWS">
+    <wsdl:operation name="getAnagrafe">
+      <wsdl:input name="getAnagrafeRequest" message="impl:getAnagrafeRequest" />
+      <wsdl:output name="getAnagrafeResponse" message="impl:getAnagrafeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCarriera">
+      <wsdl:input name="getCarrieraRequest" message="impl:getCarrieraRequest" />
+      <wsdl:output name="getCarrieraResponse" message="impl:getCarrieraResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCorsi">
+      <wsdl:input name="getCorsiRequest" message="impl:getCorsiRequest" />
+      <wsdl:output name="getCorsiResponse" message="impl:getCorsiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <wsdl:input name="logoutRequest" message="impl:logoutRequest" />
+      <wsdl:output name="logoutResponse" message="impl:logoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input name="loginRequest" message="impl:loginRequest" />
+      <wsdl:output name="loginResponse" message="impl:loginResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Esse3StudentWSSoapBinding" type="impl:Esse3StudentWS">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAnagrafe">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAnagrafeRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAnagrafeResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCarriera">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getCarrieraRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCarrieraResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCorsi">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getCorsiRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCorsiResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="logoutRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="logoutResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="loginRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Esse3StudentWSService">
+    <wsdl:port name="Esse3StudentWS" binding="impl:Esse3StudentWSSoapBinding">
+      <wsdlsoap:address location="https://analyzer.cs.unicam.it:8443/LibrettoWS1.6/services/Esse3StudentWS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:MyUnicam;assembly=MyUnicam"
+             x:Class="MyUnicam.Pagine.ComunicatiStampa"
+             Title="{Binding Titolo}"
+             BackgroundColor="#EEEEEE"
+             Padding="10">
+
+  <ScrollView>
+    <StackLayout>
+      <ListView x:Name="ElencoCS"
+                ItemsSource="{Binding CS}"
+                SelectedItem="{Binding CSSelezionato, Mode=TwoWay}"
+                BackgroundColor="#FFFFFF">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Orientation="Vertical"
+                             BackgroundColor="#FFFFFF">
+                  <StackLayout BackgroundColor="#545D7F">
+                    <StackLayout Padding="10">
+                      <Label Text="{Binding Titolo}"
+                             TextColor="#EEEEEE"
+                             VerticalOptions="Center"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout Orientation="Horizontal" Padding="10">
+                    <Label Text="{Binding Data}" TextColor="#ABABAB" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Label Text="{i18n:Translate ComunicatiStampaLeggi}" TextColor="#000000" VerticalOptions="Center" HorizontalOptions="Start"/>
+                  </StackLayout>
+
+                  <StackLayout HeightRequest="15"
+                             BackgroundColor="#EEEEEE"/>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ScrollView>
+
+</ContentPage>

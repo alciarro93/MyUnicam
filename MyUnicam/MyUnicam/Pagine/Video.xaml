@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyUnicam.Pagine.Video"
+             Title="{Binding Titolo}"
+             BackgroundColor="#EEEEEE">
+  <ScrollView>
+    <StackLayout Padding="10">
+      <StackLayout BackgroundColor="#e52d27" VerticalOptions="Center">
+        <ListView ItemsSource="{Binding CanaleYouTube}"
+                  SelectedItem="{Binding VideoSelezionato, Mode=TwoWay}"
+                  RowHeight="60">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <ViewCell.View>
+                  <StackLayout Orientation="Horizontal">
+                    <!-- Icona della pagina -->
+                    <Image Source="{Binding Immagine}"
+                           WidthRequest="70"
+                           HeightRequest="30"
+                           Scale="0.7"/>
+                    <!-- Nome della pagina -->
+                    <Label Text="{Binding Nome}"
+                           TextColor="#EEEEEE"
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand" />
+                  </StackLayout>
+                </ViewCell.View>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+      <ListView ItemsSource="{Binding Video}"
+                SelectedItem="{Binding VideoSelezionato, Mode=TwoWay}"
+                BackgroundColor="#FFFFFF">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ImageCell ImageSource="{Binding Immagine}" Text="{Binding Nome}" Detail="{Binding Data}" TextColor="#212F4A" />
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyUnicam.Pagine.TabMappaSedi.Sedi"
+             xmlns:i18n="clr-namespace:MyUnicam;assembly=MyUnicam"
+             BackgroundColor="#EEEEEE"
+             Padding="10">
+  <ScrollView>
+    <StackLayout Orientation="Vertical">
+      <!-- Scuola di Specializzazione in Diritto Civile -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Scuola di Specializzazione in Diritto Civile - Polo Granelli, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+            <Label Text="Aula Informatica" FontSize="16" TextColor="#000000"/>
+            <Label Text="Aula E. Antonini - videoconferenza - 50 posti" FontSize="16" TextColor="#000000"/>
+            <Label Text="Aula E. Urbani (ex aula Magna) - videoconferenza - 124 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Facoltà di Giurisprudenza -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Facoltà di Giurisprudenza - Palazzo Ducale, Via Cavour 2, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula Informatica" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Carlo Esposito - 70 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Allara e Grosso - 72 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Arangio Ruiz - 99 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Betti - 70 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Scaloja - 20 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Antinori - videoconferenza - 60 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Malatesta - 20 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Cantelmo - 27 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Venezian - 45 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Sala della Muta - 200 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Dipartimento di Scienze Morfologiche -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Dipartimento di Scienze Morfologiche - Via Gentile III da Varano, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula piccola - 10 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula grande - 50 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Dipartimento di Fisica -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Dipartimento di Fisica - Via Madonna delle carceri 9, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula F - 18 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula G - 18 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula E - 41 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula H - 50 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Polo D'Avack -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Polo D'Avack - Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula 1 - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 2 - 50 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 3 - 21 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 4 - 45 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 5 - 32 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 6 - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 7 - 20 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Sala conferenze - 120 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Plesso di Matematica -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Plesso di Matematica - Via Madonna delle carceri, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula A - videoconferenza - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula B - videoconferenza - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula C - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula D - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula L - 20 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Laboratorio informatico - videoconferenza - 50 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Dipartimento di Chimica -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Dipartimento di Chimica - Via San Agostino 1, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula C - 60 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Gravina - 60 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Piantoni - 120 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Facoltà di Architettura -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Facoltà di Architettura - Sede di Largo Cattaneo, Ascoli Piceno"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="C207 - Aula A" FontSize="16" TextColor="#000000"/>
+          <Label Text="C102 - Aula B" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula C" FontSize="16" TextColor="#000000"/>
+          <Label Text="C006" FontSize="16" TextColor="#000000"/>
+          <Label Text="C211" FontSize="16" TextColor="#000000"/>
+          <Label Text="C009" FontSize="16" TextColor="#000000"/>
+          <Label Text="C204" FontSize="16" TextColor="#000000"/>
+          <Label Text="C103" FontSize="16" TextColor="#000000"/>
+          <Label Text="C106" FontSize="16" TextColor="#000000"/>
+          <Label Text="C109" FontSize="16" TextColor="#000000"/>
+          <Label Text="C305" FontSize="16" TextColor="#000000"/>
+          <Label Text="C307" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Polo di Alta Formazione -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Polo di Alta Formazione - Via Camillo Lili 55, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula A - 24 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula B - 26 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula C - 22 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula D - 32 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula E - 36 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula informatica - 10 terminali" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Magna - 96 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Polo delle Scienze (Ex Rettorato) -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Polo delle Scienze (Ex Rettorato) - Via Gentile III da Varano, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula 1 - 66 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 3 - 70 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 6 - 42 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 7 - 40 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 8 - 80 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 9 - 48 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 10 - videoconferenza - 66 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 11 - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 12 - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 13 - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 14 - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 15 - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 16 - 25 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Facoltà di Scienze Tecnologiche -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Facoltà di Scienze Tecnologiche - Lungomare Scipioni 6, San Benedetto del Tronto"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula Azzurra - 110 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Unicam - 40 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula A - 60 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula B - 40 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula C - 35 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula D - 40 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Laboratorio informatico - 35 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Facoltà di Scienze e Tecnologie -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Facoltà di Scienze e Tecnologie - Via P. Mazzoni 2, Ascoli Piceno"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula Auditorium - videoconferenza - 100 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula C- videoconferenza - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula D - videoconferenza - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula B - videoconferenza - 15 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula A - Laboratorio informatico - 20 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula A1 - Laboratorio informatico - 12 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula E - videoconferenza - 15 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula F - videoconferenza - 35 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula G - 20 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula H - videoconferenza - 60 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula L - 15 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Dipartimento di Scienze della Terra -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Dipartimento di Scienze della Terra - Via Gentile III da Varano, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula A - 128 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula B - 70 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula C - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula D - videoconferenza - 60 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula E - Laboratorio didattica - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula F - Laboratorio didattico - 18 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula G - Laboratorio didattico - 30 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Laboratorio informatico - 24 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula K - 64 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula H - 145 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Polo Carla Ludovici -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Polo Carla Ludovici - Via Madonna delle carceri, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula AA1 - videoconferenza - 150 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula AB1 - 96 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula AB2 - 96 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula AB3 - 56 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula LA1 - 44 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula LA2 - 25 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula AA2 - 25 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Dipartimento di Botanica ed Ecologia -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Dipartimento di Botanica ed Ecologia - Via Pontoni, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula Galleria" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Facoltà di Architettura -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Facoltà di Architettura - Sede di Lungo Castellano, Ascoli Piceno"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="B006" FontSize="16" TextColor="#000000"/>
+          <Label Text="B202" FontSize="16" TextColor="#000000"/>
+          <Label Text="B214" FontSize="16" TextColor="#000000"/>
+          <Label Text="B017" FontSize="16" TextColor="#000000"/>
+          <Label Text="B206" FontSize="16" TextColor="#000000"/>
+          <Label Text="B110" FontSize="16" TextColor="#000000"/>
+          <Label Text="B007" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Facoltà di Architettura -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Facoltà di Architettura - Sede Annunziata, Ascoli Piceno"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="A118" FontSize="16" TextColor="#000000"/>
+          <Label Text="A012" FontSize="16" TextColor="#000000"/>
+          <Label Text="A121" FontSize="16" TextColor="#000000"/>
+          <Label Text="A117" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Facoltà di Medicina Veterinaria -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Facoltà di Medicina Veterinaria - San Sollecito, Via Circonv.ne 93/95, Matelica"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula Magna" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula G" FontSize="16" TextColor="#000000"/>
+          <Label Text="Auletta Polo" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula E" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula F" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Centro Culturale Benedetto XIII -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Centro Culturale Benedetto XIII - Via le Mosse 1, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Auditorium" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Dipartimento Medicina Sperimentale -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Dipartimento Medicina Sperimentale - Via Madonna delle Carceri, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula primo piano - 50 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula primo piano - 15 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Polo Tecnologico -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Polo Tecnologico - Palazzo Battibocca, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="George Boole - 40 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Alan Turing - 32 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Dennis Ritche - 40 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Tim Berners-Lee - 10 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Sala Nobili - 40 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula Cisco - 12 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+      <!-- Polo Didattico Campus -->
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Padding="5"
+                     BackgroundColor="#545D7F"
+                     Grid.Row="0"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="Polo Didattico Campus - Via A. D'Accorso, Camerino"
+                 FontSize="20"
+                 TextColor="#EEEEEE"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#B0B0B0"
+                     Grid.Row="1"
+                     VerticalOptions="CenterAndExpand">
+          <Label Text="{i18n:Translate Aule}"
+                 FontSize="16"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Padding="10"
+                     BackgroundColor="#FFFFFF"
+                     Grid.Row="2">
+          <Label Text="Aula 1 - 70 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 2 - 90 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 3 - 90 posti" FontSize="16" TextColor="#000000"/>
+          <Label Text="Aula 4 - 49 posti" FontSize="16" TextColor="#000000"/>
+        </StackLayout>
+      </Grid>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

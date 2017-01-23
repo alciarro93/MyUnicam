@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<resources>
+    <!-- Tema personalizzato per API < di 21 -->
+    <style name="StyleUnicam"
+           parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- Action Bar e colore rosso -->
+    <style name="MyActionBar"
+           parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#D94335</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!-- Tema personalizzato in Material Design-->
+  <style name="StyleUnicam"
+         parent="@android:style/Theme.Material.Light">
+    <!-- Colore rosso per la Action Bar -->
+    <item name="android:colorPrimary">#CC0000</item>
+    <!-- Colore rosso più scuro per la Status Bar -->
+    <item name="android:colorPrimaryDark">#B00000</item>
+    <!-- Colore rosso vivace per accenti, esempio tab selezionata in Mappa Sedi-->
+    <item name="android:colorAccent">#FFFFFF</item>
+    <!-- Bianco per il titolo della Action Bar-->
+    <item name="android:textColorPrimary">#FFFFFF</item>
+  </style>
+</resources>

@@ -1,6 +1,6 @@
 # MyUnicam
 University of Camerino mobile app that let anyone find a courses, events, press releases, videos, address book, plus strudents can log in with their university credentials and manage their career.
-Full presentation [[here](https://www.slideshare.net/slideshow/embed_code/key/bej3thYNJEJha4)]
+Full presentation [[here](http://www.slideshare.net/AlessioCiarrocchi/myunicam-presentation)]
 
 ## Tools
 - Xamarin.Forms [[Website](https://www.xamarin.com/forms)]

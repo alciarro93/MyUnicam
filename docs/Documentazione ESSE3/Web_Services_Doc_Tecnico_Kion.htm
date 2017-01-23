@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" http://www.w3.org/TR/html4/loose.dtd>
+<html>
+	<head>
+		<title>Documentazione Tecnica Web Services Kion</title>
+	</head>
+	<body style="font: 12px Verdana, Arial, Helvetica, sans-serif;">
+		<h1>WSDL</h1>
+		<div style="margin-left: 20px;">
+			Il file WSDL relativo ai servizi è raggiungibile tramite browser al seguente indirizzo:
+			<pre>http:/&lt;dominio_in_cui_è_ospitato_webesse3&gt;/&lt;eventuale_path_per_webesse3&gt;/services/ESSE3WS?WSDL</pre>
+		</div>
+		<h1>Metodi esposti</h1>
+		<p>
+		<b>fn_dologin</b> (readonly string as_username, readonly string as_password, ref string as_sessionid)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+		Effettua il login su ESSE3. Fornendo username e password si ottiene in output
+		il sessionid da utilizzare per la chiamata fn_retrieve_xml().<br>
+		Per accedere ai dati visibili da area pubblica si puo' usare l'account
+		'guest' con password 'guest'.<br>
+		</div>
+		</p>
+		<p>
+		<b>fn_retrieve_xml</b> (string as_sessionid, string as_retrieve, string as_params, ref string as_xml)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+			Recupera i dati in formato XML.
+			<ul>
+			<li><i>as_sessionid</i>: sessionid ritornato dalla funzione fn_dologin().</li>
+			<li><i>as_retrieve</i>: identificativo della retrieve da effettuare. Per i test utilizzare <i>TEST</i>.</li>
+			<li><i>as_params</i>: parametri della retrieve; per la retrieve <i>TEST</i> &egrave; possibile indicare l'id della riga da recuperare (tramite la stringa "id=<i>[VALORE]</i>"), o in alternativa una stringa di lunghezza 0 per recuperare tutti i record.</li>
+			<li><i>as_xml</i>: questa variabile viene popolata con l'XML contenente i dati.</li>
+			</ul>
+		</div>
+		</p>
+		<p>
+		<b>fn_dologout</b> (readonly string as_sessionid)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+			Chiude la sessione relativa al sessionid specificato.
+		</div>
+		</p>
+		<p>
+		<b>fn_retrieve_xml_l</b> (string as_username, string as_password, string as_retrieve, string as_params, ref string as_xml)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+		Questa funzione e' una "scorciatoia" che puo' sostituire la sequenza di chiamate:
+		<ul>
+			<li>fn_dologin()</li>
+			<li>fn_retrieve_xml()</li>
+			<li>fn_dologout()</li>
+		</ul>
+		I parametri sono analoghi a quelli gia' descritti per tali funzioni.
+		</div>
+		</p>
+		<p>
+		<b>fn_retrieve_xml_p</b> (string as_retrieve, string as_params, ref string as_xml)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+			Questa funzione e' analoga alla fn_retrieve_xml_l chiamata con utente 'guest' e password 'guest'.
+		</div>
+		</p>
+
+		<p>
+		<b>fn_retrieve_xml_x</b> (string as_sessionid, string as_xml_in, ref string as_xml_out)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+			Analoga alla fn_retrieve_xml con 4 parametri, eccettuato il fatto che i parametri di retrieve sono specificati in formato xml.
+		</div>
+		</p>
+		<p>
+		<b>fn_retrieve_xml_lx</b> (string as_username, string as_password, string as_xml_in, ref string as_xml_out)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+			Analoga alla fn_retrieve_xml_l con 5 parametri, eccettuato il fatto che i parametri di retrieve sono specificati in formato xml.
+		</div>
+		</p>
+		<p>
+		<b>fn_retrieve_xml_px</b> (string as_xml_in, ref string as_xml_out)
+		<br/><br/>
+		<div style="margin-left: 20px;">
+			Analoga alla fn_retrieve_xml_p con 3 parametri, eccettuato il fatto che i parametri di retrieve sono specificati in formato xml.
+		</div>
+		</p>
+
+		<h2>Parametri in formato XML</h2>
+		<div style="margin-left: 20px;">
+
+			Tramite la sintassi in XML &egrave; possibile recuperare pi&ugrave; blocchi in con un'unica chiamata. L'XML deve essere cos&igrave;
+			strutturato:
+<pre>
+&lt;request&gt;
+	&lt;retrieve name="[RETRIEVE1]"&gt;
+		&lt;param1&gt;value1&lt;/param1&gt;
+		&lt;param2&gt;value2&lt;/param2&gt;
+	&lt;/retrieve&gt;
+	&lt;retrieve name="[RETRIEVE2]"&gt;
+		...
+	&lt;/retrieve&gt;
+&lt;/request&gt;
+</pre>
+
+			In questo caso vengono effettuate due operazioni di retrieve, la prima &egrave; equivalente ad una chiamata non-XML con
+			<i>as_retrieve="[RETRIEVE1]"</i> e <i>as_params="param1=value1;param2=value2"</i>
+
+		</div>
+
+		<h2>Parametro include_structure</h2>
+		<div style="margin-left: 20px;">
+
+			&Egrave; possibile includere tra i parametri di retrieve il parametro <i>include_structure</i>. Se presente, l'XML
+			ritornato comprender&agrave; una sezione in cui verranno inserite informazioni relative al tipo dei campi.
+
+		</div>
+
+		<h2>Codici di ritorno</h2>
+		<div style="margin-left: 20px;">
+			In tutti i casi solo il valore di ritorno 1 indica un'elaborazione andata a buon fine.<br>
+			Altri possibili codici di ritorno sono i seguenti.
+<dl>
+<dt><b>-1</b></dt><dd>Errore nel recupero dei dati</dd>
+<dt><b>1003</b></dt><dd>Autenticazione fallita</dd>
+<dt><b>1004</b></dt><dd>Fallita la creazione del componente</dd>
+<dt><b>1007</b></dt><dd>Fallita la connessione al DB</dd>
+<dt><b>1110</b></dt><dd>Utente disabilitato</dd>
+<dt><b>1112</b></dt><dd>La password deve essere impostata (cambio password al primo login)</dd>
+<dt><b>1116</b></dt><dd>User_id non valido o nullo</dd>
+<dt><b>1119</b></dt><dd>Il gruppo a cui appartiene l'utente non &egrave; abilitato ad utilizzare questo tipo di client</dd>
+<dt><b>1126</b></dt><dd>Errore generico di LDAP</dd>
+<dt><b>1130</b></dt><dd>Password scaduta</dd>
+</dl>
+		</div>
+
+
+		<h2>Esempio di utilizzo</h2>
+
+		<div style="margin-left: 20px;">
+
+			<h3>Versione con login esplicito</h3>
+			
+			Nell'esempio seguente viene fatta la login, una retrieve, e la logout. Tra la login e la logout possono essere effettuate diverse retrieve.
+			
+<h4>Chiamata alla fn_login</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.esse3.frk.kion.it"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ws:fn_dologin soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+         &lt;username xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;guest&lt;/username&gt;
+         &lt;password xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;guest&lt;/password&gt;
+         &lt;sid xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;?&lt;/sid&gt;
+      &lt;/ws:fn_dologin&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>		
+<h4>Risposta alla fn_login</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ns1:fn_dologinResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://ws.esse3.frk.kion.it"&gt;
+         &lt;fn_dologinReturn href="#id0"/&gt;
+         &lt;sid xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;SESSIONIDGUEST&lt;/sid&gt;
+      &lt;/ns1:fn_dologinResponse&gt;
+      &lt;multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">1&lt;/multiRef&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>	
+<h4>Chiamata alla fn_retrieve_xml</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.esse3.frk.kion.it"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ws:fn_retrieve_xml soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+         &lt;sid xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;SESSIONIDGUEST&lt;/sid&gt;
+         &lt;retrieve xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;CLASSI&lt;/retrieve&gt;
+         &lt;params xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;?&lt;/params&gt;
+         &lt;xml xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;?&lt;/xml&gt;
+      &lt;/ws:fn_retrieve_xml&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+(Essendo il terzo parametro della chiamata <i>fn_retrieve_xml</i> uguale a stringa vuota i dati non vengono filtrati.)
+<h4>Risposta alla fn_retrieve_xml</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ns1:fn_retrieve_xmlResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://ws.esse3.frk.kion.it"&gt;
+         &lt;fn_retrieve_xmlReturn href="#id0"/&gt;
+         &lt;xml xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+         &lt;![CDATA[
+            &lt;?xml version="1.0" encoding="Windows-1252"?&gt;
+            &lt;WS&gt;
+               &lt;DataSet LocalEntityName="CLASSI_WS"&gt;
+                  &lt;Row Num="1"&gt;
+                     &lt;cla_m_id&gt;3&lt;/cla_m_id&gt;
+                     &lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+                     &lt;des&gt;Classe delle lauree in Scienze della mediazione linguistica&lt;/des&gt;
+                     &lt;cod&gt;3&lt;/cod&gt;
+                  &lt;/Row&gt;
+                  &lt;Row Num="2"&gt;
+                     &lt;cla_m_id&gt;5&lt;/cla_m_id&gt;
+                     &lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+                     &lt;des&gt;Classe delle lauree in Lettere&lt;/des&gt;
+                     &lt;cod&gt;5&lt;/cod&gt;
+                  &lt;/Row&gt;
+                  .....
+               &lt;/DataSet&gt;
+            &lt;/WS&gt;
+         ]]&gt;
+         &lt;/xml&gt;
+      &lt;/ns1:fn_retrieve_xmlResponse&gt;
+   &lt;multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;1&lt;/multiRef&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+<h4>Chiamata alla fn_logout</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.esse3.frk.kion.it"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ws:fn_dologout soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+         &lt;sid xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;SESSIONIDGUEST&lt;/sid&gt;
+      &lt;/ws:fn_dologout&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+<h4>Risposta alla fn_logout</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ns1:fn_dologoutResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://ws.esse3.frk.kion.it"&gt;
+         &lt;fn_dologoutReturn href="#id0"/&gt;
+      &lt;/ns1:fn_dologoutResponse&gt;
+      &lt;multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;1&lt;/multiRef&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+			</pre>
+
+
+
+			<h3>Versione compatta</h3>
+
+<h4>Chiamata alla fn_retrieve_xml_l</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.esse3.frk.kion.it"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ws:fn_retrieve_xml_l soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+         &lt;username xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;guest&lt;/username&gt;
+         &lt;password xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;guest&lt;/password&gt;
+         &lt;retrieve xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;CLASSI&lt;/retrieve&gt;
+         &lt;params xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;?&lt;/params&gt;
+         &lt;xml xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;?&lt;/xml&gt;
+      &lt;/ws:fn_retrieve_xml_l&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+<h4>Risposta alla fn_retrieve_xml_l</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ns1:fn_retrieve_xml_lResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://ws.esse3.frk.kion.it"&gt;
+         &lt;fn_retrieve_xml_lReturn href="#id0"/&gt;
+         &lt;xml xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+            &lt;![CDATA[&lt;?xml version="1.0" encoding="Windows-1252"?&gt;
+               &lt;WS&gt;
+                  &lt;DataSet LocalEntityName="CLASSI_WS"&gt;
+                     &lt;Row Num="1"&gt;
+                        &lt;cla_m_id&gt;5&lt;/cla_m_id&gt;
+                        &lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+                        &lt;des&gt;Classe delle lauree in Lettere&lt;/des&gt;
+                        &lt;cod&gt;5&lt;/cod&gt;
+                     &lt;/Row&gt;
+                  &lt;/DataSet&gt;
+               &lt;/WS&gt;
+            ]]&gt;
+         &lt;/xml&gt;
+      &lt;/ns1:fn_retrieve_xml_lResponse&gt;
+   &lt;multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;1&lt;/multiRef&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+<h3>Versione compatta con autenticazione implicita</h3>
+<h3>(Vengono implicitamente utilizzati username 'guest' e password 'guest'.)</h3>
+<h4>Chiamata alla fn_retrieve_xml_p</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.esse3.frk.kion.it"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ws:fn_retrieve_xml_p soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+         &lt;retrieve xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;CLASSI&lt;/retrieve&gt;
+         &lt;params xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;cla_m_id=3&lt;/params&gt;
+         &lt;xml xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;?&lt;/xml&gt;
+      &lt;/ws:fn_retrieve_xml_p&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+<h4>Risposta alla fn_retrieve_xml_p</h4>
+<pre style="margin-left: 20px;">
+<hr />
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ns1:fn_retrieve_xml_pResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://ws.esse3.frk.kion.it"&gt;
+         &lt;fn_retrieve_xml_pReturn href="#id0"/&gt;
+         &lt;xml xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+            &lt;![CDATA[&lt;?xml version="1.0" encoding="Windows-1252"?&gt;
+               &lt;WS&gt;
+                  &lt;DataSet LocalEntityName="CLASSI_WS"&gt;
+                     &lt;Row Num="1"&gt;
+                        &lt;cla_m_id&gt;3&lt;/cla_m_id&gt;
+                        &lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+                        &lt;des&gt;Classe delle lauree in Scienze della mediazione linguistica&lt;/des&gt;
+                        &lt;cod&gt;5&lt;/cod&gt;
+                     &lt;/Row&gt;
+                  &lt;/DataSet&gt;
+               &lt;/WS&gt;
+            ]]&gt;         
+         &lt;/xml&gt;
+      &lt;/ns1:fn_retrieve_xml_pResponse&gt;
+   &lt;multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"&gt;1&lt;/multiRef&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+<hr />
+</pre>
+</body>
+</html>
+
